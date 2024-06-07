@@ -1,11 +1,13 @@
 import {App, createApp, defineAsyncComponent} from "vue";
 import RequireContext = __WebpackModuleApi.RequireContext;
-import {Component} from "@vue/runtime-core";
+import {Component, ComponentPublicInstance} from "@vue/runtime-core";
 
 type Initializer = (app: App) => void
 
 export default class VueComponent {
+    private vueControllers: any;
     create: (component: Component, props: Record<string, unknown>) => App
+    mount: (name: string, props: any, element: string) => ComponentPublicInstance
 
     constructor(init: Initializer|null) {
         this.create = (component: Component, props: Record<string, unknown>): App => {
@@ -15,18 +17,17 @@ export default class VueComponent {
             }
             return app
         }
+        this.mount = (name: string, props: any, element: string): ComponentPublicInstance => {
+            const component = this.loadComponent(name);
+            const app = this.create(component, props);
+            return app.mount(element);
+        }
     }
 
     static register(init: Initializer|null, context: RequireContext) {
         const vc = new VueComponent(init)
         vc.registerControllerComponents(context)
         vc.bindToWindow()
-    }
-
-    mount(name: string, props: any, element: string) {
-        const component = this.loadComponent(name);
-        const app = this.create(component, props);
-        return app.mount(element);
     }
 
     loadComponent(name: string) {
@@ -60,8 +61,6 @@ export default class VueComponent {
         }
         return this.vueControllers[componentPath];
     }
-
-    private vueControllers: any;
 
     private context: RequireContext|null = null
 

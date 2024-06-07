@@ -1,6 +1,6 @@
 {
   "name": "craft-vue-component",
-  "version": "1.0.7",
+  "version": "1.0.8",
   "description": "Loading Vue components in Craft CMS",
   "keywords": ["craftcms", "vue"],
   "homepage": "https://github.com/panlatent/craft-vue-component",
