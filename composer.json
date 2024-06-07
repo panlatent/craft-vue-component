@@ -1,0 +1,47 @@
+{
+    "name": "panlatent/craft-vue-component",
+    "type": "craft-plugin",
+    "license": "mit",
+    "support": {
+        "email": "panlatent@gmail.com",
+        "issues": "https://github.com/panlatent/craft-vue-component/issues?state=open",
+        "source": "https://github.com/panlatent/craft-vue-component",
+        "docs": "https://github.com/panlatent/craft-vue-component",
+        "rss": "https://github.com/panlatent/craft-vue-component/releases.atom"
+    },
+    "require": {
+        "php": ">=8.0.2",
+        "craftcms/cms": "^4.3.5"
+    },
+    "require-dev": {
+        "craftcms/ecs": "dev-main",
+        "craftcms/phpstan": "dev-main"
+    },
+    "autoload": {
+        "psr-4": {
+            "panlatent\\craft\\vuecomponent\\": "src/"
+        }
+    },
+    "extra": {
+        "handle": "vue-component",
+        "name": "Vue Component",
+        "developer": "panlatent",
+        "documentationUrl": "https://github.com/panlatent/craft-vue-component"
+    },
+    "scripts": {
+        "check-cs": "ecs check --ansi",
+        "fix-cs": "ecs check --ansi --fix",
+        "phpstan": "phpstan --memory-limit=1G"
+    },
+    "config": {
+        "sort-packages": true,
+        "platform": {
+            "php": "8.0.2"
+        },
+        "allow-plugins": {
+            "yiisoft/yii2-composer": true,
+            "craftcms/plugin-installer": true
+        }
+    }
+}
+

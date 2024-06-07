@@ -1,0 +1,27 @@
+{
+  "name": "craft-vue-component",
+  "version": "1.0.3",
+  "description": "Loading Vue components in Craft CMS",
+  "keywords": ["craftcms", "vue"],
+  "homepage": "https://github.com/panlatent/craft-vue-component",
+  "main": "dist/index.js",
+  "types": "dist/index.d.js",
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build": "tsc",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "panlatent",
+  "license": "MIT",
+  "dependencies": {
+
+  },
+  "devDependencies": {
+    "@types/webpack-env": "^1.18.5",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.4.5",
+    "vue": "^3.4.27"
+  }
+}
