@@ -1,6 +1,14 @@
 # Craft Vue Component
+[![License](https://img.shields.io/github/license/panlatent/craft-vue-component?style=flat-square)](LICENSE)
 
-Loading Vue components in Craft CMS
+Craft Vue Component is a lightweight plugin for Craft CMS. It is used to render compiled Vue components in Twig templates.
+
+Component props are passed in by PHP or Twig, and the component code remains in the Vue single file(`.vue`).
+so that you can get a complete front-end development experience，and with clean twig template code.
+
+```twig
+{{ vueComponent('post', data) }}
+```
 
 ## Requirements
 
